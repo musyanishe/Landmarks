@@ -20,11 +20,19 @@ struct LandmarkRow: View {
             Text(landmark.name)
             
             Spacer()
+        
+            if landmark.isFavorite {
+                Image(systemName: "heart.circle")
+                    .foregroundColor(.purple)
+            }
         }
     }
 }
 
 struct LandmarkRow_Previews: PreviewProvider {
+    
+    static let landmarks = ModelData().landmarks
+    
     static var previews: some View {
         Group {
             LandmarkRow(landmark: landmarks[0])
