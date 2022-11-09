@@ -34,6 +34,10 @@ struct Landmark: Hashable, Codable, Identifiable {
             longitude: coordinates.longitude)
     } //взаимодействие с фреймворком MapKit
     
+    var featureImage: Image? {
+        isFeatured ? Image(imageName + "_feature") : nil
+    } //опциональное изображение, вернется в случае, если isFeatured будет верно
+    
 }
 
 struct Coordinates: Hashable, Codable {
